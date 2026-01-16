@@ -1,15 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta name="theme-color" content="#ff7aa2">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  <meta name="apple-mobile-web-app-title" content="Divisas BCV">
-  <link rel="manifest" href="manifest.json">
-  <link rel="icon" sizes="192x192" href="icon-192.png">
-  <link rel="icon" sizes="512x512" href="icon-512.png">
-  <link rel="apple-touch-icon" href="icon-180.png">
-
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>Divisas BCV / Paralelo — Suite (Solo Módulo)</title>
@@ -80,6 +71,10 @@ body.dark .ud{background:#5e3c49 !important;color:#fff}
 #vinil_summary strong.upd{ opacity:.25 }
 </style>
 
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#ff7aa2">
 </head>
 <body>
 <div class="app">
@@ -494,15 +489,9 @@ try{ document.getElementById('btn_copy_resumen')?.remove(); }catch(e){}
 try{ document.getElementById('btn_print_resumen')?.remove(); }catch(e){}
 </script>
 <script>
-(function(){
-  if (!('serviceWorker' in navigator)) return;
-  window.addEventListener('load', function(){
-    navigator.serviceWorker.register('sw.js?v=20260116-01').catch(function(err){
-      console.warn('SW register failed', err);
-    });
-  });
-})();
+if('serviceWorker' in navigator){
+  navigator.serviceWorker.register('sw.js');
+}
 </script>
-
 </body>
 </html>
